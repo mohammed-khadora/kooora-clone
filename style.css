@@ -83,11 +83,78 @@ body{
 }
 
 nav{
-    display: flex;
     margin-bottom: 10px;
+    position: relative;
 }
 
-nav a{
+nav ul{
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+nav ul li{
+    flex-grow:1;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.expanded{
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    background-color:white;
+    left: 0;
+    z-index: 1;
+    display: none;
+    padding: 20px 29px;
+}
+
+.expanded ul {
+    display: list-item;
+    font-size: 12px;
+    margin: 0;
+}
+
+.expanded ul li{
+    display:list-item;
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+}
+
+.space{
+    margin: 1.5rem 0 1rem 0;
+}
+
+.expanded ul li hr{
+    margin-right: 1rem;
+    color: #15151506 !important;
+}
+
+.expanded ul li a{
+    background-color: white !important;
+    border: none;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0;
+    transition: 0.3s;
+}
+
+.expanded ul li a:hover{
+    background-color: black !important;
+    color: white;
+    border-right: 2px solid var(--secondary-color);
+}
+
+nav ul li:hover .expanded{
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li a{
     font-size: 14px;
     text-decoration: none;
     color: #ffffff;
@@ -99,9 +166,42 @@ nav a{
     transition: 0.2s;
 }
 
-nav a:hover{
+nav ul li:hover a{
 background-color: var(--secondary-color);
 color: var(--primary-color);
+}
+
+.expanded .search-bar{
+    display: flex;
+    flex-direction: column;
+    color: rgb(0, 0, 0);
+    background-color: #d7d7d7;
+    margin-top: 1rem;
+    position: relative;
+    border:1px solid lightgray;
+    /* position: absolute;
+    top: 120px;
+    /* right: 120px; */
+}
+
+.expanded .search-bar p{
+    color:var(--primary-color);
+    font-weight: bold;
+    font-size: 12px;
+    margin-left: 4px;
+    margin-bottom: 2px;
+}
+
+.expanded .search-bar input{
+    padding: 0px 10px;
+    margin: 5px 4px 4px 4px;
+    height: 30px !important;
+}
+
+.expanded .search-bar i{
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
 }
 
 nav .spacer{
@@ -446,6 +546,21 @@ footer i{
     align-items: center;
 }
 
+/* footer i::after{ 
+    content: "Goalz";
+    opacity: 0;
+    pointer-events: none;
+    background-color: #ffc14d;
+    color: #343434;
+    transition: 0.5s;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+footer i:hover::after{
+    opacity: 1;
+}
+*/
 
 
 
